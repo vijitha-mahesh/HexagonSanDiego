@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\favicon\apple-touch-icon-114x114.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-120x120.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-144x144.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-152x152.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-57x57.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-60x60.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-72x72.png" />
+    <None Include="wwwroot\images\favicon\apple-touch-icon-76x76.png" />
+    <None Include="wwwroot\images\favicon\favicon-128.png" />
+    <None Include="wwwroot\images\favicon\favicon-16x16.png" />
+    <None Include="wwwroot\images\favicon\favicon-196x196.png" />
+    <None Include="wwwroot\images\favicon\favicon-32x32.png" />
+    <None Include="wwwroot\images\favicon\favicon-96x96.png" />
+    <None Include="wwwroot\images\favicon\favicon.ico" />
+    <None Include="wwwroot\images\favicon\mstile-144x144.png" />
+    <None Include="wwwroot\images\favicon\mstile-150x150.png" />
+    <None Include="wwwroot\images\favicon\mstile-310x150.png" />
+    <None Include="wwwroot\images\favicon\mstile-310x310.png" />
+    <None Include="wwwroot\images\favicon\mstile-70x70.png" />
+    <None Include="wwwroot\library\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\library\bootstrap\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\library\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\library\bootstrap\js\popper.min.js" />
+    <None Include="wwwroot\library\fancybox\css\jquery.fancybox.min.css" />
+    <None Include="wwwroot\library\fancybox\js\jquery.fancybox.min.js" />
+    <None Include="wwwroot\library\fontawesome\css\all.min.css" />
+    <None Include="wwwroot\library\fontawesome\js\all.min.js" />
+    <None Include="wwwroot\library\fontawesome\js\conflict-detection.min.js" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-brands-400.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-duotone-900.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-duotone-900.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-duotone-900.woff2" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-light-300.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-light-300.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-light-300.woff2" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-regular-400.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-solid-900.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-thin-100.ttf" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-thin-100.woff" />
+    <None Include="wwwroot\library\fontawesome\webfonts\fa-thin-100.woff2" />
+    <None Include="wwwroot\library\helper\css\helper.css" />
+    <None Include="wwwroot\library\js\jquery-3.6.0.min.js" />
+    <None Include="wwwroot\library\page-animate\css\aos.css" />
+    <None Include="wwwroot\library\page-animate\js\aos.js" />
+    <None Include="wwwroot\library\site\css\style.css" />
+    <None Include="wwwroot\library\site\js\css_browser_selector.js" />
+    <None Include="wwwroot\library\site\js\jquery-3.4.1.min.js" />
+    <None Include="wwwroot\library\site\js\jquery-ui.js" />
+    <None Include="wwwroot\library\site\js\site.js" />
+    <None Include="wwwroot\library\site\js\site.min.js" />
+    <None Include="wwwroot\library\swiper\css\animate.compat.css" />
+    <None Include="wwwroot\library\swiper\css\swiper.min.css" />
+    <None Include="wwwroot\library\swiper\js\swiper.min.js" />
+    <None Include="wwwroot\library\swiper\js\SwiperAnimation.min.js" />
+  </ItemGroup>
+
+</Project>

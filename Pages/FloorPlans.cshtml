@@ -1,0 +1,335 @@
+﻿@page
+@model HexagonSanDiego.Pages.FloorPlansModel
+@section Style{
+}
+@section Scripts{
+
+}
+<div class="container-fluid px-0 page-banner-container">
+    <div class="slider-filter-2"></div>
+    <img src="/images/page/page-banner.jpg">
+    <div class="banner-page-title">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="f-family-old">FLOOR PLANS</h1>
+                </div>
+            </div>
+            <div class="row breadcrumb-gen">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">HOME</a></li>
+                        <li class="breadcrumb-item active">FLOOR PLANS</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 content-gen-box">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque. Vestibulum id sem eget lacus semper ornare at aliquam quam. In sed nisl id lectus iaculis tincidunt imperdiet vitae nunc. Curabitur venenatis neque ut turpis sodales, eu ultrices nisi elementum. Proin in faucibus enim. Vestibulum mattis hendrerit purus nec convallis. Nam imperdiet placerat mattis. Aenean lorem eros, semper vehicula enim a, consectetur consectetur sapien. Suspendisse id sem blandit, venenatis nisi nec, sagittis quam.</p>
+        </div>
+    </div>
+    <div class="row tab-floor-gen mt-5">
+        <div class="col-12">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item text-center" role="presentation">
+                    <a class="nav-link active" id="pills-floorAll-tab" data-toggle="pill" href="#pills-floorAll" role="tab" aria-controls="pills-floorAll" aria-selected="true">
+                        ALL
+                    </a>
+                </li>
+                <li class="nav-item text-center" role="presentation">
+                    <a class="nav-link" id="pills-floorStudio-tab" data-toggle="pill" href="#pills-floorStudio" role="tab" aria-controls="pills-floorStudio" aria-selected="true">
+                        STUDIO
+                    </a>
+                </li>
+                <li class="nav-item text-center" role="presentation">
+                    <a class="nav-link" id="pills-floorBed1-tab" data-toggle="pill" href="#pills-floorBed1" role="tab" aria-controls="pills-floorBed1" aria-selected="true">
+                        1 BED
+                    </a>
+                </li>
+                <li class="nav-item text-center" role="presentation">
+                    <a class="nav-link" id="pills-floorBed2-tab" data-toggle="pill" href="#pills-floorBed2" role="tab" aria-controls="pills-floorBed2" aria-selected="true">
+                        2 BED
+                    </a>
+                </li>
+                <li class="ml-auto align-self-center date-picker">
+                    <input type="date" id="datepicker" class="form-control" value="Move-In Date">
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active pt-2 pt-md-5" id="pills-floorAll" role="tabpanel" aria-labelledby="pills-floorAll-tab">
+                    <div class="d-none d-md-block">
+                        <div class="row tab-vertical-floor">
+                            <div class="col-md-4 col-12">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link active" id="v-pills-floor1-tab" data-toggle="pill" href="#v-pills-floor1" role="tab" aria-controls="v-pills-floor1" aria-selected="true">Studio - s1</a>
+                                    <a class="nav-link" id="v-pills-floor2-tab" data-toggle="pill" href="#v-pills-floor2" role="tab" aria-controls="v-pills-floor2" aria-selected="false">Studio Large - s2</a>
+                                    <a class="nav-link" id="v-pills-floor3-tab" data-toggle="pill" href="#v-pills-floor3" role="tab" aria-controls="v-pills-floor3" aria-selected="false">One Bedroom Two Bath - a6</a>
+                                    <a class="nav-link" id="v-pills-floor4-tab" data-toggle="pill" href="#v-pills-floor4" role="tab" aria-controls="v-pills-floor4" aria-selected="false">Two Bedroom Two Bath - b1</a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-12">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-floor1" role="tabpanel" aria-labelledby="v-pills-floor1-tab">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-5 col-md-12">
+                                                <h1>Studio - s1</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-floor2" role="tabpanel" aria-labelledby="v-pills-floor2-tab">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-5 col-md-12">
+                                                <h1>Studio Large - s2</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-floor3" role="tabpanel" aria-labelledby="v-pills-floor3-tab">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-5 col-md-12">
+                                                <h1>One Bedroom Two Bath - a6</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-floor4" role="tabpanel" aria-labelledby="v-pills-floor4-tab">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-5 col-md-12">
+                                                <h1>Two Bedroom Two Bath - b1</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*Mobil Görünüm*@
+                    <div class="row d-block d-md-none">
+                        <div class="accordion mt-3 col-12" id="exampleAccordion">
+                            <div class="card">
+                                <div class="card-header" id="exItem1Header">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#exItem1" aria-expanded="false" aria-controls="exItem1">Studio - s1 <i class="fa-solid fa-chevron-up" aria-hidden="false"></i></a>
+                                </div>
+                                <div id="exItem1" class="collapse" aria-labelledby="exItem1Header" data-parent="#exampleAccordion" style="">
+                                    <div class="card-body">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k"><i class="fa-regular fa-video mr-2"></i>VIDEO</a>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-5 col-md-12 mt-3">
+
+                                                <h1>Studio - s1</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="exItem2Header">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#exItem2" aria-expanded="false" aria-controls="exItem2">Studio Large - s2 <i class="fa-solid fa-chevron-up" aria-hidden="false"></i></a>
+                                </div>
+                                <div id="exItem2" class="collapse" aria-labelledby="exItem2Header" data-parent="#exampleAccordion">
+                                    <div class="card-body">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-5 col-md-12 mt-3">
+
+                                                <h1>Studio Large - s2</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="exItem3Header">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#exItem3" aria-expanded="false" aria-controls="exItem3">One Bedroom Two Bath - a6 <i class="fa-solid fa-chevron-up" aria-hidden="false"></i></a>
+                                </div>
+                                <div id="exItem3" class="collapse" aria-labelledby="exItem3Header" data-parent="#exampleAccordion">
+                                    <div class="card-body">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-5 col-md-12 mt-3">
+
+                                                <h1>One Bedroom Two Bath - a6</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="exItem4Header">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#exItem4" aria-expanded="false" aria-controls="exItem4">Two Bedroom Two Bath - b1 <i class="fa-solid fa-chevron-up" aria-hidden="false"></i></a>
+                                </div>
+                                <div id="exItem4" class="collapse" aria-labelledby="exItem4Header" data-parent="#exampleAccordion">
+                                    <div class="card-body">
+                                        <div class="row floor-box">
+                                            <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                </a>
+                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-5 col-md-12 mt-3">
+
+                                                <h1>Two Bedroom Two Bath - b1</h1>
+                                                <p>Contact for Availability</p>
+                                                <ul>
+                                                    <li><span>Bed: </span>Studio</li>
+                                                    <li><span>Bath: </span>1</li>
+                                                    <li><span>Sq.Ft.: </span>390</li>
+                                                    <li><span>Rent: </span>Call for details</li>
+                                                    <li><span>Deposit: </span>$500</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade pt-5" id="pills-floorStudio" role="tabpanel" aria-labelledby="pills-floorStudio-tab">
+                    Lorem B
+                </div>
+                <div class="tab-pane fade pt-5" id="pills-floorBed1" role="tabpanel" aria-labelledby="pills-floorBed1-tab">
+                    Lorem C
+                </div>
+                <div class="tab-pane fade pt-5" id="pills-floorBed2" role="tabpanel" aria-labelledby="pills-floorBed2-tab">
+                    Lorem D
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque. Vestibulum id sem eget lacus semper ornare at aliquam quam. In sed nisl id lectus iaculis tincidunt imperdiet vitae nunc. Curabitur venenatis neque ut turpis sodales, eu ultrices nisi elementum. Proin in faucibus enim. Vestibulum mattis hendrerit purus nec convallis. Nam imperdiet placerat mattis. Aenean lorem eros, semper vehicula enim a, consectetur consectetur sapien. Suspendisse id sem blandit, venenatis nisi nec, sagittis quam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque. Vestibulum id sem eget lacus semper ornare at aliquam quam. In sed nisl id lectus iaculis tincidunt imperdiet vitae nunc. Curabitur venenatis neque ut turpis sodales, eu ultrices nisi elementum. Proin in faucibus enim. Vestibulum mattis hendrerit purus nec convallis. Nam imperdiet placerat mattis. Aenean lorem eros, semper vehicula enim a, consectetur consectetur sapien. Suspendisse id sem blandit, venenatis nisi nec, sagittis quam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque. Vestibulum id sem eget lacus semper ornare at aliquam quam. In sed nisl id lectus iaculis tincidunt imperdiet vitae nunc. Curabitur venenatis neque ut turpis sodales, eu ultrices nisi elementum. Proin in faucibus enim. Vestibulum mattis hendrerit purus nec convallis. Nam imperdiet placerat mattis. Aenean lorem eros, semper vehicula enim a, consectetur consectetur sapien. Suspendisse id sem blandit, venenatis nisi nec, sagittis quam.</p>
+        </div>
+    </div>
+</div>
