@@ -59,8 +59,27 @@
             109 results found.
         </div>
         <div class="col-12 mt-5 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12045.363266195562!2d29.053964!3d40.995913!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x684675e1d4b47eb2!2sRella%20Medya!5e0!3m2!1str!2str!4v1645776311668!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div id="map" style="height:600px; width: 100%"></div>
+
+            <script>
+                var map;
+
+                function initMap(){
+                    map = new google.maps.Map(document.getElementById('map'),{
+                    center:{lat:6.58432,lng :79.9609},
+                    zoom:8
+                    });
+                }
+
+            </script>
+
+            <script async
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5XTX9-pSDBAHYCn7h39o9CYluaFs8c-E&callback=initMap">
+            </script>
+
         </div>
+
         <div class="col-12 list-link">
             <h2 class="mt-5">Entertainment</h2>
             <ul>
