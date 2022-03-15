@@ -9,5 +9,8 @@ namespace HexagonSanDiego.Repositories.IRepository
     {
         Task<IEnumerable<GetFloorPlanDto>> AddFloorPlan (AddFloorPlanDto newFloorPlan);
         Task<IEnumerable<GetFloorPlanDto>> GetFloorPlan();
+        Task<IEnumerable<GetFloorPlanDto>> UpdateFloorPlan(UpdateFloorPlanDto updateFloorPlanDto);
+        Task<IEnumerable<GetFloorPlanDto>> DeleteFloorPlan(UpdateFloorPlanDto updateFloorPlanDto);
+
     }
 }

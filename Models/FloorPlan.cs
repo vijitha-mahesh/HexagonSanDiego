@@ -13,6 +13,7 @@ namespace HexagonSanDiego.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Bed { get; set; }
+        public int Bath { get; set; }
         public int SqFeet { get; set; }
         public string Rent { get; set; }
         public int Deposit { get; set; }
@@ -22,7 +23,7 @@ namespace HexagonSanDiego.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public Status Status { get; set; } = Status.Active;
+        public Status Status { get; set; } = 0;
 
     }
 }
