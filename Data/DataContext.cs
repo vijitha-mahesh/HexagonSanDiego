@@ -1,5 +1,6 @@
 ﻿
 using HexagonSanDiego.Model;
+using HexagonSanDiego.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HexagonSanDiego.Data
@@ -11,6 +12,7 @@ namespace HexagonSanDiego.Data
 
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<FloorPlan> FloorPlans { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
