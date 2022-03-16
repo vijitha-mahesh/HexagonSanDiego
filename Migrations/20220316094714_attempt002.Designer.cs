@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HexagonSanDiego.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220316055859_creat4")]
-    partial class creat4
+    [Migration("20220316094714_attempt002")]
+    partial class attempt002
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,6 +119,48 @@ namespace HexagonSanDiego.Migrations
                     b.ToTable("FloorPlans");
                 });
 
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AmenitiesText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CommunityText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstergramLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotogalleryText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WelcometoImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WelcometoText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YellpLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomePages");
+                });
+
             modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -129,12 +171,17 @@ namespace HexagonSanDiego.Migrations
                     b.Property<int?>("AmenityId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("HomePageId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AmenityId");
+
+                    b.HasIndex("HomePageId");
 
                     b.ToTable("images");
                 });
@@ -145,10 +192,21 @@ namespace HexagonSanDiego.Migrations
                         .WithMany("Images")
                         .HasForeignKey("AmenityId");
 
+                    b.HasOne("HexagonSanDiego.Models.HomePage", "HomePage")
+                        .WithMany("Images")
+                        .HasForeignKey("HomePageId");
+
                     b.Navigation("Amenity");
+
+                    b.Navigation("HomePage");
                 });
 
             modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
+                {
+                    b.Navigation("Images");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePage", b =>
                 {
                     b.Navigation("Images");
                 });

@@ -18,7 +18,7 @@ namespace HexagonSanDiego.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Category Category { get; set; }
+        public string Category { get; set; }
         public string Bed { get; set; }
         public int Bath { get; set; }
         public int SqFeet { get; set; }
