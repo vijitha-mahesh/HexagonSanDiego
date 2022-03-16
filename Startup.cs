@@ -80,6 +80,7 @@ namespace HexagonSanDiego
             ////////////////////////////////////////////////////// Swagger 
 
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IFloorPlanRepository, FloorPlanRepository>();
 
             //////////////////////////////////////////////////////// Auth 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

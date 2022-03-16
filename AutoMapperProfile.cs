@@ -10,6 +10,8 @@ namespace HexagonSanDiego
         {
             CreateMap<FloorPlan, GetFloorPlanDto>();
             CreateMap<AddFloorPlanDto, FloorPlan>();
+            CreateMap<UpdateFloorPlanDto, FloorPlan>();
+
         }
     }
             
