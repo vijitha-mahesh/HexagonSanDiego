@@ -34,46 +34,15 @@
         </div>
         <div class="col-12 mt-4">
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-1.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-1.jpg" />
+                @foreach(var items in Model.ImageList)
+                {
+                    var iphotourl = "/images/gallery/" + items;
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
+                    <a data-fancybox="images" href="@iphotourl">
+                        <img class="img-fluid" src="@iphotourl" />
                     </a>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-2.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-2.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-3.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-3.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-4.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-4.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-3.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-3.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-4.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-4.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-1.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-1.jpg" />
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
-                    <a data-fancybox="images" href="/images/gallery/room-2.jpg">
-                        <img class="img-fluid" src="/images/gallery/room-2.jpg" />
-                    </a>
-                </div>
+                }
             </div>
         </div>
     </div>

@@ -1,7 +1,12 @@
 ﻿@page
 @model HexagonSanDiego.Pages.AdminPages.PhotosModel
 @{
-       Layout = null;
+    Layout = null;
+    ViewData["Title"] = "Index";
 }
 
-<h1>photos</h1>
+<form method="post" enctype="multipart/form-data">
+   <input name="ifile" class="form-control" type="file" accept="image/*" asp-for="ifile"/>
+   <input type="submit" value="Add Image" />
+   <h4> @ViewData["Message"] </h4>
+</form>
