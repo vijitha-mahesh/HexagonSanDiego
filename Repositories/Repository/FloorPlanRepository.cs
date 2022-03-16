@@ -23,14 +23,14 @@ namespace HexagonSanDiego.Repositories.Repository
             _mapper = mapper;
 
         }
-        public async Task<IEnumerable<GetFloorPlanDto>> AddFloorPlan(AddFloorPlanDto newFloorPlan)
+        public async Task<bool> AddFloorPlan(AddFloorPlanDto newFloorPlan)
         {
             FloorPlan floorPlan  = _mapper.Map<FloorPlan>(newFloorPlan);
            
             _context.FloorPlans.Add(floorPlan);
             await _context.SaveChangesAsync();
             var result = await _context.FloorPlans.ToListAsync();
-            return (IEnumerable<GetFloorPlanDto>)result;
+            return true;
         }
 
         public async Task<IEnumerable<GetFloorPlanDto>> DeleteFloorPlan(UpdateFloorPlanDto updateFloorPlanDto)
@@ -63,7 +63,7 @@ namespace HexagonSanDiego.Repositories.Repository
             }
         }
 
-        public async Task<IEnumerable<GetFloorPlanDto>> GetFloorPlan()
+        public async Task<List<GetFloorPlanDto>> GetFloorPlan()
         {
             var plans = await _context.FloorPlans.ToArrayAsync();
             var x = plans.Select(c => _mapper.Map<GetFloorPlanDto>(c)).ToList();
