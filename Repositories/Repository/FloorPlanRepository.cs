@@ -48,8 +48,8 @@ namespace HexagonSanDiego.Repositories.Repository
                 floorPlan.SqFeet = updateFloorPlanDto.SqFeet;
                 floorPlan.Rent = updateFloorPlanDto.Rent;
                 floorPlan.Deposit = updateFloorPlanDto.Deposit;
-                floorPlan.Status = 0;
-
+                floorPlan.Status = (Status)1;
+                floorPlan.Category = updateFloorPlanDto.Category;
 
                 await _context.SaveChangesAsync();
                 var list = _mapper.Map<GetFloorPlanDto>(floorPlan);
@@ -86,7 +86,7 @@ namespace HexagonSanDiego.Repositories.Repository
                 floorPlan.Rent = updateFloorPlanDto.Rent;
                 floorPlan.Deposit = updateFloorPlanDto.Deposit;
                 floorPlan.Status = 0;
-
+                floorPlan.Category = updateFloorPlanDto.Category;
 
                 await _context.SaveChangesAsync();
                 var list = _mapper.Map<GetFloorPlanDto>(floorPlan);

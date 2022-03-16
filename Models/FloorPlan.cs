@@ -8,10 +8,17 @@ namespace HexagonSanDiego.Models
         Active,
         Deactive
     }
+    public enum Category
+    {
+        Studio,
+        Bed,
+        TwoBed
+    }
     public class FloorPlan
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public Category Category { get; set; }
         public string Bed { get; set; }
         public int Bath { get; set; }
         public int SqFeet { get; set; }

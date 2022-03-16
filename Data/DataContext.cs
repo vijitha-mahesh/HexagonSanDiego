@@ -13,12 +13,14 @@ namespace HexagonSanDiego.Data
         }
         public DbSet<User> Users { get; set; }
         public DbSet<FloorPlan> FloorPlans { get; set; }
+        public DbSet<Amenity> Amenities { get; set; }
+        public DbSet<Image> images { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .Property(user => user.Role).HasDefaultValue("Applicant");
+                .Property(user => user.Role).HasDefaultValue("Admin");
         }
     }
 }
