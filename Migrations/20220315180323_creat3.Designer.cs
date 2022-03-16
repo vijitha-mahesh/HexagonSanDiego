@@ -4,14 +4,16 @@ using HexagonSanDiego.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HexagonSanDiego.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220315180323_creat3")]
+    partial class creat3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace HexagonSanDiego.Migrations
                     b.Property<string>("Role")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("Admin");
+                        .HasDefaultValue("Applicant");
 
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
@@ -58,21 +60,6 @@ namespace HexagonSanDiego.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Amenities");
                 });
 
             modelBuilder.Entity("HexagonSanDiego.Models.FloorPlan", b =>
@@ -87,9 +74,6 @@ namespace HexagonSanDiego.Migrations
 
                     b.Property<string>("Bed")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Category")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -115,40 +99,6 @@ namespace HexagonSanDiego.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FloorPlans");
-                });
-
-            modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("AmenityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AmenityId");
-
-                    b.ToTable("images");
-                });
-
-            modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
-                {
-                    b.HasOne("HexagonSanDiego.Models.Amenity", "Amenity")
-                        .WithMany("Images")
-                        .HasForeignKey("AmenityId");
-
-                    b.Navigation("Amenity");
-                });
-
-            modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
-                {
-                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

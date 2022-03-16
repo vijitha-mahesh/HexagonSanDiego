@@ -11,6 +11,7 @@ namespace HexagonSanDiego.Pages
     {
         public void OnGet()
         {
+
         }
     }
 }
