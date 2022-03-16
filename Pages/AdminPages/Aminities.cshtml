@@ -5,3 +5,43 @@
 }
 
 <h1>AMENITIES</h1>
+
+<script src="~/library/lib/jquery/dist/jquery.js"></script>
+<script src="~/library/js/ckeditor/ckeditor.js"></script>
+<link href="~/library/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="card" style="padding:10px 50px 50px 50px">
+
+    <h3>Write your Article Here</h3>
+
+    <div>
+        <form asp-controller="Article" asp-action="WriteArticle" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" />
+            <input type="hidden" />
+            <div ass="col-md-10">
+                <textarea style="border-color:grey;"  id="ArticleTitle" name="ArticleTitle" cols="70" placeholder="Add Title"></textarea>
+            </div>
+            <div ass="col-md-10">
+                <textarea  id="Description" class="ckeditor" name="Description" rows="200"></textarea>
+            </div>
+            <div style="padding-top:10px">
+                <button class="btn btn-outline-primary" type="submit" value="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    body {
+        background-color: #eee;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300
+    }
+</style>
+
+
+<script>
+    $(document).ready(function () {
+        CKEDITOR.replace('#Description');
+    });
+</script>
