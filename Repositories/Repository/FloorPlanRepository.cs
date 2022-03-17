@@ -50,6 +50,7 @@ namespace HexagonSanDiego.Repositories.Repository
                 floorPlan.Deposit = updateFloorPlanDto.Deposit;
                 floorPlan.Status = (Status)1;
                 floorPlan.Category = updateFloorPlanDto.Category;
+                floorPlan.Availability=updateFloorPlanDto.Availability;
 
                 await _context.SaveChangesAsync();
                 var list = _mapper.Map<GetFloorPlanDto>(floorPlan);
@@ -65,7 +66,8 @@ namespace HexagonSanDiego.Repositories.Repository
 
         public async Task<List<GetFloorPlanDto>> GetFloorPlan()
         {
-            var plans = await _context.FloorPlans.ToArrayAsync();
+            var plans = await _context.FloorPlans.Where(c=>c.Status==0).
+                ToArrayAsync();
             var x = plans.Select(c => _mapper.Map<GetFloorPlanDto>(c)).ToList();
             return x;
         }
@@ -87,6 +89,7 @@ namespace HexagonSanDiego.Repositories.Repository
                 floorPlan.Deposit = updateFloorPlanDto.Deposit;
                 floorPlan.Status = 0;
                 floorPlan.Category = updateFloorPlanDto.Category;
+                floorPlan.Availability = updateFloorPlanDto.Availability;
 
                 await _context.SaveChangesAsync();
                 var list = _mapper.Map<GetFloorPlanDto>(floorPlan);
