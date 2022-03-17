@@ -36,12 +36,12 @@ namespace HexagonSanDiego.Pages.AdminPages
         public async Task<IActionResult> OnPostAsync(HomePageDataModel homePageDataModel)
         {
             //Slider Image Upload
-                var sliderimg = Path.Combine(_iwebhost.WebRootPath, "images/slider", sliderImage.FileName);
-                var stream1 = new FileStream(sliderimg, FileMode.Create);
-                await sliderImage.CopyToAsync(stream1);
-                //var path = env.WebRootFileProvider.GetFileInfo("images/gallery/" + sliderImage.FileName)?.PhysicalPath;
-                var sliderPath = "images/slider/" + sliderImage.FileName;
-                homePageDataModel.SliderImage = sliderPath;
+            var sliderimg = Path.Combine(_iwebhost.WebRootPath, "images/slider", sliderImage.FileName);
+            var stream1 = new FileStream(sliderimg, FileMode.Create);
+            await sliderImage.CopyToAsync(stream1);
+            //var path = env.WebRootFileProvider.GetFileInfo("images/gallery/" + sliderImage.FileName)?.PhysicalPath;
+            var sliderPath = "images/slider/" + sliderImage.FileName;
+            homePageDataModel.SliderImage = sliderPath;
 
             //Welcome Image Upload
             var welcomeimg = Path.Combine(_iwebhost.WebRootPath, "images/page", welcomeImage.FileName);
@@ -65,9 +65,9 @@ namespace HexagonSanDiego.Pages.AdminPages
 
             if (homePageData != null)
             {
-               _homePageRepository.addData(homePageData);
+                _homePageRepository.addData(homePageData);
             }
-            
+
             return Page();
         }
     }
