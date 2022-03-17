@@ -50,18 +50,19 @@
             <a class="btn btn-gold px-5 rounded-0 btn-lg" href="FloorPlans">CHECK  AVAILABILITY</a>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 mb-3 mb-lg-0 order-1 order-lg-2 align-self-stretch">
-            <img class="img-fluid" src="/images/page/hakkimizda-index.jpg" />
+            <img class="img-fluid" src="@(Model.homePageDataModel.WelcometoImage)" />
         </div>
     </div>
 </div>
-<div class="container-fluid galleri-index px-0 content-white content-box">
+<div class="container-fluid galleri-index px-0 content-white content-box" id='gallery-bg'>
 
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-xl-4 col-lg-4 col-md-6 col-12 align-self-center">
                 <h2>ONE ROOF, MANY THINGS</h2>
                 <h1 class="f-family-old">Photo Gallery</h1>
-                <p>@Model.homePageDataModel.PhotogalleryText</p>
+                <p>@Model.homePageDataModel.PhotogalleryText @(Model.homePageDataModel.PhotogalleryImage)</p>
+
                 <a class="btn btn-white px-5 rounded-0 btn-lg" href="Photos">VIEW GALLERY</a>
             </div>
         </div>
@@ -169,3 +170,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    let element = document.getElementById("gallery-bg");
+   
+    element.style.backgroundImage = "url(@(Model.homePageDataModel.WelcometoImage))";
+
+</script>
