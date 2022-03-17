@@ -120,7 +120,7 @@ namespace HexagonSanDiego.Migrations
                     b.ToTable("FloorPlans");
                 });
 
-            modelBuilder.Entity("HexagonSanDiego.Models.HomePageModel", b =>
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,7 +193,7 @@ namespace HexagonSanDiego.Migrations
                         .WithMany("Images")
                         .HasForeignKey("AmenityId");
 
-                    b.HasOne("HexagonSanDiego.Models.HomePageModel", "HomePage")
+                    b.HasOne("HexagonSanDiego.Models.HomePageDataModel", "HomePage")
                         .WithMany("Images")
                         .HasForeignKey("HomePageId");
 
@@ -207,7 +207,7 @@ namespace HexagonSanDiego.Migrations
                     b.Navigation("Images");
                 });
 
-            modelBuilder.Entity("HexagonSanDiego.Models.HomePageModel", b =>
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
                 {
                     b.Navigation("Images");
                 });
