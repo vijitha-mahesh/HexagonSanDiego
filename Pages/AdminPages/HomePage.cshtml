@@ -22,8 +22,10 @@
 
 <div class="container">
 
-    <h1>Edit Home</h1>
-    <form method="post"  enctype="multipart/form-data">
+
+    <h1> <button class="btn" onclick="history.back()"> <i class="bi bi-arrow-left fa-1000px"></i></button> Edit Home</h1>
+    <form method="post">
+
         <div class="form-group">
             <label for="formGroupExampleInput">Slider Images</label>
             <input name="sliderImage" class="form-control " type="file" accept="image/*" asp-for="sliderImage"/>
@@ -41,6 +43,7 @@
              <label for="formGroupExampleInput2">Welcome to Text</label>
             <textarea asp-for="homePageDataModel.WelcometoText" id="WelcometoText" class="ckeditor" name="WelcometoText" rows="200"></textarea>
         </div>
+
 
         <div class="form-group">
             <label for="formGroupExampleInput2">Welcome to Image</label>
@@ -62,10 +65,13 @@
             <label for="formGroupExampleInput2">Community Text</label>
             <input asp-for="homePageDataModel.CommunityText" type="text" class="form-control">
         </div>
+
+
         <div class="form-group">
             <label for="formGroupExampleInput2">Footer Texts</label>
             <input asp-for="homePageDataModel.FooterText" type="text" class="form-control">
         </div>
+
         <h1>Social Links</h1>
         <div class="form-group">
             <label for="formGroupExampleInput2">Facebook</label>

@@ -14,6 +14,7 @@ namespace HexagonSanDiego.Dtos.FloorPlanDtos
         public string Rent { get; set; }
         public int Deposit { get; set; }
         public string ImageUrl { get; set; }
+        public string VideoUrl { get; set; }
         public Status Status { get; set; }
     }
 }
