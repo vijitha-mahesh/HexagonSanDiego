@@ -6,9 +6,11 @@ namespace HexagonSanDiego.Models
     {
         public int Id { get; set; }
         public string SliderText { get; set; }
+        public string SliderImage { get; set; }
         public string WelcometoText { get; set; }
         public string WelcometoImage { get; set; }
         public string PhotogalleryText { get; set; }
+        public string PhotogalleryImage { get; set; }
         public string AmenitiesText { get; set; }
         public string CommunityText { get; set; }
         public string FooterText { get; set; }

@@ -23,10 +23,10 @@
 <div class="container">
 
     <h1>Edit Home</h1>
-    <form method="post">
+    <form method="post"  enctype="multipart/form-data">
         <div class="form-group">
             <label for="formGroupExampleInput">Slider Images</label>
-            <input type="text" class="form-control">
+            <input name="sliderImage" class="form-control " type="file" accept="image/*" asp-for="sliderImage"/>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Slider Text</label>
@@ -44,11 +44,15 @@
 
         <div class="form-group">
             <label for="formGroupExampleInput2">Welcome to Image</label>
-            <input type="text" class="form-control">
+            <input name="welcomeImage" class="form-control " type="file" accept="image/*" asp-for="welcomeImage"/>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Photogallery Text</label>
             <input asp-for="homePageDataModel.PhotogalleryText" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Photogallery Image</label>
+            <input name="galleryImage" class="form-control " type="file" accept="image/*" asp-for="galleryImage"/>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Amenities Text</label>
