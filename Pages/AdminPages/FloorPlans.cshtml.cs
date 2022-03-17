@@ -28,15 +28,19 @@ namespace HexagonSanDiego.Pages.AdminPages
            
         }
 
-        public void OnPost(AddFloorPlanDto addFloorPlanDto)
+        public ActionResult OnPost(AddFloorPlanDto addFloorPlanDto)
         {
             var floorPlanDto = addFloorPlanDto;
 
             if (floorPlanDto != null)
             {
-                _floorPlanRepository.AddFloorPlan(floorPlanDto);
+               if(_floorPlanRepository.AddFloorPlan(floorPlanDto).Result)
+                {
+                 return Redirect("/FloorPlans");
+                };
             }
-            ViewData["sucessMessage"] = "1";
+
+            return null;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace HexagonSanDiego.Models
         public string Rent { get; set; }
         public int Deposit { get; set; }
         public string ImageUrl { get; set; }
+        public string VideoUrl { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

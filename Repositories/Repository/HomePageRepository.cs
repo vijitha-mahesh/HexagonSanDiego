@@ -1,6 +1,7 @@
 ﻿using HexagonSanDiego.Data;
 using HexagonSanDiego.Models;
 using HexagonSanDiego.Repositories.IRepository;
+using System.Linq;
 
 namespace HexagonSanDiego.Repositories.Repository
 {
@@ -21,8 +22,8 @@ namespace HexagonSanDiego.Repositories.Repository
 
         public HomePageDataModel getData()
         {
-            HomePageDataModel homePage = new HomePageDataModel();
-            //  _context.HomePages
+         //   var homePage = new HomePageDataModel();
+           var homePage = _context.HomePages.OrderByDescending(x => x.Id).Take(1).FirstOrDefault();
             return homePage;
         }
     }
