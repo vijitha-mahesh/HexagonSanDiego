@@ -14,12 +14,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-@if (ViewData["sucessMessage"] != null)  
-    {  
-        <div class="alert alert-primary" role="alert">
- Adding Success
-</div>
-    }  
+@if (ViewData["sucessMessage"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        Adding Success
+    </div>
+}
 
 <div class="container mt-3">
     <div class="row">
@@ -51,20 +51,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var item in Model.allFloorPlans)
+            @foreach (var item in Model.allFloorPlans)
             {
-            <tr>
-                <th scope="row">@item.Name</th>
-                <td>@item.Category</td>
-                <td>@item.Bed</td>
-                <td>@item.Bath</td>
-                <td>@item.SqFeet</td>
-                <td>@item.Rent</td>
-                <td>@item.Deposit</td>
+                <tr>
+                    <th scope="row">@item.Name</th>
+                    <td>@item.Category</td>
+                    <td>@item.Bed</td>
+                    <td>@item.Bath</td>
+                    <td>@item.SqFeet</td>
+                    <td>@item.Rent</td>
+                    <td>@item.Deposit</td>
 
-                <td><button class="btn btn-warning w-100">Edit</button></td>
-                <td><button class="btn btn-danger w-75">Delete</button></td>
-            </tr>
+                    <td><button class="btn btn-warning w-100">Edit</button></td>
+                    <td><button class="btn btn-danger w-75">Delete</button></td>
+                </tr>
             }
         </tbody>
     </table>
@@ -79,13 +79,13 @@
     <form method="post">
 
         <div class="form-group row d-flex justify-content-center">
-            
+
             <label class="col-sm-2 col-form-label ">
                 Category
             </label>
             <div class="col-sm-6">
                 <select class="form-select form-control form-control-sm" aria-label="Default select example" asp-for="addFloorPlanDto.Category">
-                   <option value="Studio"> Studio</option>
+                    <option value="Studio"> Studio</option>
                     <option value="1 Bed"> 1 Bed</option>
                     <option value="2 Bed"> 2 Bed </option>
                 </select>
@@ -141,14 +141,22 @@
                 <input asp-for="addFloorPlanDto.Deposit" type="text" id="form6Example1" class="form-control" />
             </div>
         </div>
-         <div class="form-group row d-flex justify-content-center">
-            
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Video Url
+            </label>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <input asp-for="addFloorPlanDto.VideoUrl" type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+
             <label class="col-sm-2 col-form-label ">
                 Category
             </label>
             <div class="col-sm-6">
                 <select class="form-select form-control form-control-sm" aria-label="Default select example" asp-for="addFloorPlanDto.Availability">
-                   <option value="Available"> Available</option>
+                    <option value="Available"> Available</option>
                     <option value="ContactForAvailability"> Contact For Availability</option>
                 </select>
             </div>
@@ -164,7 +172,7 @@
 </div>
 
 <script>
-    function addFloorPlan() 
+    function addFloorPlan()
     {
       document.getElementById("addFloorPlan").style.display = "block";
       document.getElementById("btnAllPlans").style.display = "block";
