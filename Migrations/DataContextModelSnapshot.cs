@@ -145,7 +145,13 @@ namespace HexagonSanDiego.Migrations
                     b.Property<string>("InstergramLink")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PhotogalleryImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhotogalleryText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderImage")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SliderText")
@@ -172,9 +178,6 @@ namespace HexagonSanDiego.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AmenityId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("HomePageId")
                         .HasColumnType("int");
 
@@ -183,8 +186,6 @@ namespace HexagonSanDiego.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AmenityId");
-
                     b.HasIndex("HomePageId");
 
                     b.ToTable("images");
@@ -192,22 +193,11 @@ namespace HexagonSanDiego.Migrations
 
             modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
                 {
-                    b.HasOne("HexagonSanDiego.Models.Amenity", "Amenity")
-                        .WithMany("Images")
-                        .HasForeignKey("AmenityId");
-
                     b.HasOne("HexagonSanDiego.Models.HomePageDataModel", "HomePage")
                         .WithMany("Images")
                         .HasForeignKey("HomePageId");
 
-                    b.Navigation("Amenity");
-
                     b.Navigation("HomePage");
-                });
-
-            modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
-                {
-                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
