@@ -4,8 +4,8 @@ namespace HexagonSanDiego.Repositories.IRepository
 {
     public interface IHomePageRepository
     {
-        bool addData(HomePage homePage);
+        bool addData(HomePageDataModel homePage);
 
-        HomePage getData();
+        HomePageDataModel getData();
     }
 }

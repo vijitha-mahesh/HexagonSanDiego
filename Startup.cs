@@ -81,6 +81,7 @@ namespace HexagonSanDiego
 
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IFloorPlanRepository, FloorPlanRepository>();
+            services.AddScoped<IHomePageRepository,HomePageRepository>();
 
             //////////////////////////////////////////////////////// Auth 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
