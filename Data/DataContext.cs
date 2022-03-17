@@ -15,7 +15,7 @@ namespace HexagonSanDiego.Data
         public DbSet<FloorPlan> FloorPlans { get; set; }
         public DbSet<Amenity> Amenities { get; set; }
         public DbSet<Image> images { get; set; }
-        public DbSet<HomePage> HomePages { get; set; }
+        public DbSet<HomePageDataModel> HomePages { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

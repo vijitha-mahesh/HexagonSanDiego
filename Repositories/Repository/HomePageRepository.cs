@@ -4,8 +4,7 @@ using HexagonSanDiego.Repositories.IRepository;
 
 namespace HexagonSanDiego.Repositories.Repository
 {
-
-    public class HomePageRepository: IHomePageRepository
+    public class HomePageRepository:IHomePageRepository
     {
         private readonly DataContext _context;
         public HomePageRepository(DataContext context)
@@ -13,16 +12,16 @@ namespace HexagonSanDiego.Repositories.Repository
             _context = context;
         }
 
-        public bool addData(HomePage homePage)
+        public bool addData(HomePageDataModel homePage)
         {
             _context.HomePages.Add(homePage);
             _context.SaveChanges();
-            return true;    
+            return true;
         }
 
-        public HomePage getData()
+        public HomePageDataModel getData()
         {
-            HomePage homePage = new HomePage();
+            HomePageDataModel homePage = new HomePageDataModel();
             //  _context.HomePages
             return homePage;
         }

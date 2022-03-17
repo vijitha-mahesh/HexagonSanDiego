@@ -2,7 +2,7 @@
 
 namespace HexagonSanDiego.Models
 {
-    public class HomePage
+    public class HomePageDataModel
     {
         public int Id { get; set; }
         public string SliderText { get; set; }

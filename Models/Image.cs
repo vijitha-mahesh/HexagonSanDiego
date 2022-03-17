@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Url { get; set; }
         public Amenity Amenity { get; set; }
-        public HomePage HomePage { get; set; }
+        public HomePageDataModel HomePage { get; set; }
     }
 }
