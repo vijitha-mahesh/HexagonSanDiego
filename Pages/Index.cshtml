@@ -9,9 +9,11 @@
 <div class="container-fluid banner-container slider px-0">
     <div class="swiper-container default-slider">
         <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <img class="img-fluid" src="/images/slider/slider-1.jpg" />
+            @foreach( var items in Model.ImageList)
+            {
+                var iphotourl = "/images/slider/" + items; 
+                <div class="swiper-slide">
+                <img class="img-fluid" src="@iphotourl" />
                 <div class="slider-filter"></div>
                 <div class="slider-content-gen">
                     <div class="container">
@@ -23,21 +25,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <img class="img-fluid" src="/images/slider/slider-2.jpg" />
-                <div class="slider-filter"></div>
-                <div class="slider-content-gen">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-10 col-lg-11 col-md-12  slider-content text-center">
-                                <h1>@Model.homePageDataModel.SliderText</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>     
+            }
+          
         </div>
     </div>
 </div>
@@ -61,7 +51,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-12 align-self-center">
                 <h2>ONE ROOF, MANY THINGS</h2>
                 <h1 class="f-family-old">Photo Gallery</h1>
-                <p>@Model.homePageDataModel.PhotogalleryText @(Model.homePageDataModel.PhotogalleryImage)</p>
+                <p>@Model.homePageDataModel.PhotogalleryText</p>
 
                 <a class="btn btn-white px-5 rounded-0 btn-lg" href="Photos">VIEW GALLERY</a>
             </div>
@@ -174,6 +164,6 @@
 <script>
     let element = document.getElementById("gallery-bg");
    
-    element.style.backgroundImage = "url(@(Model.homePageDataModel.WelcometoImage))";
+    element.style.backgroundImage = "url(@(Model.homePageDataModel.PhotogalleryImage))";
 
 </script>
