@@ -3,6 +3,85 @@
 @section Style{
 }
 @section Scripts{
+<script type="text/javascript">
+    var map;
+
+
+    function initMap(){
+
+        var mapOptions = {
+              zoom: 8,
+              center: new google.maps.LatLng(6.58432, 79.9609),
+              mapTypeId: 'satellite'
+          };
+
+
+        map = new google.maps.Map(document.getElementById('map'),mapOptions);
+
+        $.ajax({
+             url: "@Url.Page("/Map")?handler=MapMarkers",
+                method: "GET",
+                contentType:"application/json; charset=utf-8",
+                dataType:"JSON",
+                success: function (response) {
+                   alert(response[0].LocationName);
+
+                   var result = response;
+                   for(let a=0 ; a<result.length; a++){
+                        
+                       var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(result[a].Latitude, result[a].Longitude),
+                        map: map,
+                        title: result[a].LocationName });
+                   }
+
+                },
+                failure: function (response) {
+                        alert("failure " + response.responseText);
+                },
+                error: function (response) {
+                        alert(" Error "+response.responseText);
+                }
+        });
+
+    }
+
+
+
+        // for (var Location in Model.Locations ){
+
+
+        //    var marker = new google.maps.Marker({
+        //    position: new google.maps.LatLng(Location.Latitude, Location.Longitude),
+        //    map: map,
+        //    title: LocationName });
+        //}
+
+
+
+
+    function markpoints(){
+
+        //for (var Location in @Model.Locations ){
+
+        //    var marker = new google.maps.Marker({
+        //    position: new google.maps.LatLng(Location.Latitude, Location.Longitude),
+        //    map: map,
+        //    title: LocationName });
+        //}
+
+
+        //var marker2 = new google.maps.Marker({
+        //position: new google.maps.LatLng(7.58432, 79.9609),
+        //map: map,
+        //title: "hello"});
+    }
+
+</script>
+
+<script async
+        src=@Model.mapsrc>
+</script>
 }
 <div class="container-fluid px-0 page-banner-container">
     <div class="slider-filter-2"></div>
@@ -62,34 +141,7 @@
 
             <div id="map" style="height:600px; width: 100%"></div>
 
-            <script>
-                var map;
 
-                function initMap(){
-                    map = new google.maps.Map(document.getElementById('map'),{
-                    center:new google.maps.LatLng(6.58432, 79.9609),
-                    zoom:8
-                    });
-
-                    var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(6.58432, 79.9609),
-                    map: map,
-                    title: "hello" });
-
-                    var marker2 = new google.maps.Marker({
-                    position: new google.maps.LatLng(7.58432, 79.9609),
-                    map: map,
-                    title: "hello"});
-                    
-                }
-
-            
-
-            </script>
-
-            <script async
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5XTX9-pSDBAHYCn7h39o9CYluaFs8c-E&callback=initMap">
-            </script>
 
         </div>
 
@@ -185,4 +237,7 @@
             <p>Aenean euismod vulputate eros, eu convallis dolor aliquam et. Vivamus malesuada, nulla non ultrices scelerisque, erat sapien bibendum magna, at tincidunt purus dui at urna. Proin ac pellentesque nulla, non volutpat quam. Phasellus ullamcorper ante et metus laoreet commodo.</p>
         </div>
     </div>
+
+
+
 </div>

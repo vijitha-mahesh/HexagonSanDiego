@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
 
 namespace HexagonSanDiego
 {
@@ -31,6 +32,7 @@ namespace HexagonSanDiego
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -54,7 +56,11 @@ namespace HexagonSanDiego
             });
             ///////////////////////////////////////////////////  Cors
             
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options => {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                options.JsonSerializerOptions.DictionaryKeyPolicy = null;
+
+            });
             ////////////////////////////////////////////////// Controllers
 
             services.AddDbContext<DataContext>(options =>
@@ -80,6 +86,7 @@ namespace HexagonSanDiego
             ////////////////////////////////////////////////////// Swagger 
 
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ILocationRepo, LocationRepo>();
 
             //////////////////////////////////////////////////////// Auth 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -102,6 +109,7 @@ namespace HexagonSanDiego
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -129,6 +137,8 @@ namespace HexagonSanDiego
                  endpoints.MapRazorPages();
                // endpoints.MapControllers();
             });
+
+            
         }
     }
 }
