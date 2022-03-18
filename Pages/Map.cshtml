@@ -24,15 +24,18 @@
                 contentType:"application/json; charset=utf-8",
                 dataType:"JSON",
                 success: function (response) {
-                   alert(response[0].LocationName);
+                 //  alert(response[0].LocationName);
 
                    var result = response;
+                   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/library_maps.png';
                    for(let a=0 ; a<result.length; a++){
                         
                        var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(result[a].Latitude, result[a].Longitude),
                         map: map,
-                        title: result[a].LocationName });
+                        title: result[a].LocationName,
+                        icon:iconBase
+                       });
                    }
 
                 },
@@ -46,38 +49,16 @@
 
     }
 
+        $("#selectMapCategory").change(function () {
+            var c = $("#selectMapCategory").val();
+            alert(c);
+      });
 
+ 
 
-        // for (var Location in Model.Locations ){
-
-
-        //    var marker = new google.maps.Marker({
-        //    position: new google.maps.LatLng(Location.Latitude, Location.Longitude),
-        //    map: map,
-        //    title: LocationName });
-        //}
-
-
-
-
-    function markpoints(){
-
-        //for (var Location in @Model.Locations ){
-
-        //    var marker = new google.maps.Marker({
-        //    position: new google.maps.LatLng(Location.Latitude, Location.Longitude),
-        //    map: map,
-        //    title: LocationName });
-        //}
-
-
-        //var marker2 = new google.maps.Marker({
-        //position: new google.maps.LatLng(7.58432, 79.9609),
-        //map: map,
-        //title: "hello"});
-    }
 
 </script>
+
 
 <script async
         src=@Model.mapsrc>
@@ -121,7 +102,7 @@
         <div class="w-100"></div>
         <div class="col-xl-3 col-lg-3 col-md-4 col-12 mt-3 mt-4">
             <div class="input-group">
-                <select id="Select1" class="form-control">
+                <select id="selectMapCategory" class="form-control" asp-for="selectedMapItem" >
                     <option>All Categories</option>
                     <option>Entertainment</option>
                     <option>Food</option>

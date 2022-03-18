@@ -16,6 +16,7 @@ namespace HexagonSanDiego.Pages
         public IEnumerable<Location> Locations { get; set; }
         [BindProperty]
         public string mapsrc { get; set; }
+        public string selectedMapItem { get; set; }
         public MapModel(ILocationRepo repo)
         {
             _repo =repo;
