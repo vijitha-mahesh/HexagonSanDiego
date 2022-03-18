@@ -4,57 +4,65 @@
 }
 @section Scripts{
 <script type="text/javascript">
-    var map;
+        var map;
 
 
-    function initMap(){
+        function initMap(){
 
-        var mapOptions = {
-              zoom: 8,
-              center: new google.maps.LatLng(6.58432, 79.9609),
-              mapTypeId: 'satellite'
-          };
+            var mapOptions = {
+                  zoom: 8,
+                  center: new google.maps.LatLng(6.58432, 79.9609),
+                  mapTypeId: 'satellite'
+              };
 
 
-        map = new google.maps.Map(document.getElementById('map'),mapOptions);
+            map = new google.maps.Map(document.getElementById('map'),mapOptions);
 
-        $.ajax({
-             url: "@Url.Page("/Map")?handler=MapMarkers",
-                method: "GET",
-                contentType:"application/json; charset=utf-8",
-                dataType:"JSON",
-                success: function (response) {
-                 //  alert(response[0].LocationName);
+            $.ajax({
+                 url: "@Url.Page("/Map")?handler=MapMarkers",
+                    method: "GET",
+                    contentType:"application/json; charset=utf-8",
+                    dataType:"JSON",
+                    success: function (response) {
+                     //  alert(response[0].LocationName);
 
-                   var result = response;
-                   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/library_maps.png';
-                   for(let a=0 ; a<result.length; a++){
-                        
-                       var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(result[a].Latitude, result[a].Longitude),
-                        map: map,
-                        title: result[a].LocationName,
-                        icon:iconBase
-                       });
-                   }
+                       var result = response;
+                       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/library_maps.png';
 
-                },
-                failure: function (response) {
-                        alert("failure " + response.responseText);
-                },
-                error: function (response) {
-                        alert(" Error "+response.responseText);
-                }
-        });
 
-    }
+                       $.each(response, function( key, value ) {
+                            var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(value.Latitude, value.Longitude),
+                            map: map,
+                            title: value.LocationName,
+                            icon:iconBase
+                           });
 
-        $("#selectMapCategory").change(function () {
-            var c = $("#selectMapCategory").val();
-            alert(c);
-      });
+                         }
 
- 
+                        );
+
+
+             
+
+
+                    },
+                    failure: function (response) {
+                            alert("failure " + response.responseText);
+                    },
+                    error: function (response) {
+                            alert(" Error "+response.responseText);
+                    }
+            });
+
+        }
+
+            $("#selectMapCategory").change(function () {
+                var c = $("#selectMapCategory").val();
+                alert(c);
+          });
+
+
 
 
 </script>
@@ -102,7 +110,7 @@
         <div class="w-100"></div>
         <div class="col-xl-3 col-lg-3 col-md-4 col-12 mt-3 mt-4">
             <div class="input-group">
-                <select id="selectMapCategory" class="form-control" asp-for="selectedMapItem" >
+                <select id="selectMapCategory" class="form-control" asp-for="selectedMapItem">
                     <option>All Categories</option>
                     <option>Entertainment</option>
                     <option>Food</option>
