@@ -1,5 +1,6 @@
 ﻿@page
 @model HexagonSanDiego.Pages.VirtualToursModel
+@using HexagonSanDiego.Models
 @section Style{
 }
 @section Scripts{
@@ -28,29 +29,11 @@
 </div>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-1.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-2.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-3.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-4.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-1.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-2.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-3.jpg" />
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
-            <img class="img-fluid" src="/images/gallery/room-4.jpg" />
-        </div>
+        @foreach (var item in Model.allVertualTours)
+        {
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-4">
+                <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 75%;"><iframe src="@(item.url)" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen allow="xr-spatial-tracking;"></iframe></div>
+            </div>
+        }
     </div>
 </div>
