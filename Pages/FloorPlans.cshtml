@@ -1,10 +1,17 @@
 ﻿@page
 @model HexagonSanDiego.Pages.FloorPlansModel
+@using HexagonSanDiego.Dtos.FloorPlanDtos
 @section Style{
 }
+@{
+    int curentId = 0;
+    int count = 1;
+}
+
 @section Scripts{
 
 }
+
 <div class="container-fluid px-0 page-banner-container">
     <div class="slider-filter-2"></div>
     <img src="/images/page/page-banner.jpg">
@@ -65,111 +72,89 @@
                         <div class="row tab-vertical-floor">
                             <div class="col-md-4 col-12">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link active" id="v-pills-floor1-tab" data-toggle="pill" href="#v-pills-floor1" role="tab" aria-controls="v-pills-floor1" aria-selected="true">Studio - s1</a>
-                                    <a class="nav-link" id="v-pills-floor2-tab" data-toggle="pill" href="#v-pills-floor2" role="tab" aria-controls="v-pills-floor2" aria-selected="false">Studio Large - s2</a>
-                                    <a class="nav-link" id="v-pills-floor3-tab" data-toggle="pill" href="#v-pills-floor3" role="tab" aria-controls="v-pills-floor3" aria-selected="false">One Bedroom Two Bath - a6</a>
-                                    <a class="nav-link" id="v-pills-floor4-tab" data-toggle="pill" href="#v-pills-floor4" role="tab" aria-controls="v-pills-floor4" aria-selected="false">Two Bedroom Two Bath - b1</a>
+                                    @foreach (var item in Model.allFloorPlans)
+                                    {
+
+                                        <a class="nav-link" data-toggle="pill" href="@("#v-pills-floor"+@item.Id)" role="tab" aria-controls="@("v-pills-floor1"+ @item.Id)" aria-selected="false">@item.Name</a>
+
+                                    }
                                 </div>
                             </div>
+
                             <div class="col-md-8 col-12">
                                 <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="v-pills-floor1" role="tabpanel" aria-labelledby="v-pills-floor1-tab">
-                                        <div class="row floor-box">
-                                            <div class="col-xl-6 col-lg-5 col-md-12">
-                                                <h1>Studio - s1</h1>
-                                                <p>Contact for Availability</p>
-                                                <ul>
-                                                    <li><span>Bed: </span>Studio</li>
-                                                    <li><span>Bath: </span>1</li>
-                                                    <li><span>Sq.Ft.: </span>390</li>
-                                                    <li><span>Rent: </span>Call for details</li>
-                                                    <li><span>Deposit: </span>$500</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                    @foreach (var item in Model.allFloorPlans)
+                                    {
 
-                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
-                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
-                                                </a>
-                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                        if (count == 1)
+                                        {
+                                            count++;
+
+                                            <div class="tab-pane fade show active" id="@("v-pills-floor"+@item.Id)" role="tabpanel" aria-labelledby="@("v-pills-floor"+@item.Id+"-tab")">
+                                                <div class="row floor-box">
+                                                    <div class="col-xl-6 col-lg-5 col-md-12">
+                                                        <h1>@item.Name</h1>
+                                                        <p>@item.Availability</p>
+                                                        <ul>
+                                                            <li><span>Bed: </span>@item.Bed</li>
+                                                            <li><span>Bath: </span>@item.Bath</li>
+                                                            <li><span>Sq.Ft.: </span>@item.SqFeet</li>
+                                                            <li><span>Rent: </span>@item.Rent</li>
+                                                            <li><span>Deposit: </span>@item.Deposit</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                        <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                            <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                        </a>
+                                                        <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="@(@item.VideoUrl)"> VIDEO</a>
+                                                    </div>
+                                                    @if (!item.Availability.Equals("Available"))
+                                                    {
+                                                        <div class="col-12 mt-5">
+                                                            <p>At this time one or more floor plans at this community are currently unavailable. Please select "Add to waitlist" if you would like to be put on the waiting list.</p>
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
-                                            <div class="col-12 mt-5">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
+                                        }
+                                        else
+                                        {
+
+                                            <div class="tab-pane fade show " id="@("v-pills-floor"+@item.Id)" role="tabpanel" aria-labelledby="@("v-pills-floor"+@item.Id+"-tab")">
+                                                <div class="row floor-box">
+                                                    <div class="col-xl-6 col-lg-5 col-md-12">
+                                                        <h1>@item.Name</h1>
+                                                         <p>@item.Availability</p>
+                                                        <ul>
+                                                            <li><span>Bed: </span>@item.Bed</li>
+                                                            <li><span>Bath: </span>@item.Bath</li>
+                                                            <li><span>Sq.Ft.: </span>@item.SqFeet</li>
+                                                            <li><span>Rent: </span>@item.Rent</li>
+                                                            <li><span>Deposit: </span>@item.Deposit</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-7 col-md-12">
+
+                                                        <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
+                                                            <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
+                                                        </a>
+                                                        <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
+                                                    </div>
+                                                    @if (!item.Availability.Equals("Available"))
+                                                    {
+                                                        <div class="col-12 mt-5">
+                                                            <p>At this time one or more floor plans at this community are currently unavailable. Please select "Add to waitlist" if you would like to be put on the waiting list.</p>
+                                                        </div>
+                                                    }
+
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="v-pills-floor2" role="tabpanel" aria-labelledby="v-pills-floor2-tab">
-                                        <div class="row floor-box">
-                                            <div class="col-xl-6 col-lg-5 col-md-12">
-                                                <h1>Studio Large - s2</h1>
-                                                <p>Contact for Availability</p>
-                                                <ul>
-                                                    <li><span>Bed: </span>Studio</li>
-                                                    <li><span>Bath: </span>1</li>
-                                                    <li><span>Sq.Ft.: </span>390</li>
-                                                    <li><span>Rent: </span>Call for details</li>
-                                                    <li><span>Deposit: </span>$500</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-7 col-md-12">
-                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
-                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
-                                                </a>
-                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
-                                            </div>
-                                            <div class="col-12 mt-5">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="v-pills-floor3" role="tabpanel" aria-labelledby="v-pills-floor3-tab">
-                                        <div class="row floor-box">
-                                            <div class="col-xl-6 col-lg-5 col-md-12">
-                                                <h1>One Bedroom Two Bath - a6</h1>
-                                                <p>Contact for Availability</p>
-                                                <ul>
-                                                    <li><span>Bed: </span>Studio</li>
-                                                    <li><span>Bath: </span>1</li>
-                                                    <li><span>Sq.Ft.: </span>390</li>
-                                                    <li><span>Rent: </span>Call for details</li>
-                                                    <li><span>Deposit: </span>$500</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-7 col-md-12">
-                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
-                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
-                                                </a>
-                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
-                                            </div>
-                                            <div class="col-12 mt-5">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="v-pills-floor4" role="tabpanel" aria-labelledby="v-pills-floor4-tab">
-                                        <div class="row floor-box">
-                                            <div class="col-xl-6 col-lg-5 col-md-12">
-                                                <h1>Two Bedroom Two Bath - b1</h1>
-                                                <p>Contact for Availability</p>
-                                                <ul>
-                                                    <li><span>Bed: </span>Studio</li>
-                                                    <li><span>Bath: </span>1</li>
-                                                    <li><span>Sq.Ft.: </span>390</li>
-                                                    <li><span>Rent: </span>Call for details</li>
-                                                    <li><span>Deposit: </span>$500</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-7 col-md-12">
-                                                <a data-fancybox="images" href="/images/gallery/floor-1.jpg">
-                                                    <img class="img-fluid border" src="/images/gallery/floor-1.jpg" />
-                                                </a>
-                                                <a class="btn btn-gold px-5 rounded-0 btn-lg btn-block mt-3" data-fancybox href="https://www.youtube.com/watch?v=VZmPYUz877k">VIDEO</a>
-                                            </div>
-                                            <div class="col-12 mt-5">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin placerat purus. Cras vestibulum arcu neque, eu pellentesque eros finibus venenatis. Mauris quis orci pellentesque, commodo leo vitae, pulvinar mi. Praesent in nibh sed eros maximus cursus. Nulla facilisi. Vivamus vitae elit ut lectus tempus scelerisque.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        }
+                                    }
+
+
                                 </div>
                             </div>
                         </div>
@@ -333,3 +318,5 @@
         </div>
     </div>
 </div>
+
+

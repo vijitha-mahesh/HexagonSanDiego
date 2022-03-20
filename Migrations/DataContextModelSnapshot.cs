@@ -50,7 +50,7 @@ namespace HexagonSanDiego.Migrations
                     b.Property<string>("Role")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("Applicant");
+                        .HasDefaultValue("Admin");
 
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
@@ -60,31 +60,169 @@ namespace HexagonSanDiego.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("HexagonSanDiego.Models.Location", b =>
+
+
+            modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
+
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<string>("LocationName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LocationType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("locations");
+                    b.ToTable("Amenities");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.FloorPlan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Availability")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Bath")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Bed")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Deposit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SqFeet")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FloorPlans");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AmenitiesText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CommunityText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstergramLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotogalleryImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotogalleryText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SliderText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WelcometoImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WelcometoText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YellpLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomePages");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("HomePageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HomePageId");
+
+                    b.ToTable("images");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.VertualTours", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("VertualTour");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
+                {
+                    b.HasOne("HexagonSanDiego.Models.HomePageDataModel", "HomePage")
+                        .WithMany("Images")
+                        .HasForeignKey("HomePageId");
+
+                    b.Navigation("HomePage");
+                });
+
+            modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
+                {
+                    b.Navigation("Images");
+
                 });
 #pragma warning restore 612, 618
         }
