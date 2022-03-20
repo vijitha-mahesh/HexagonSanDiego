@@ -17,7 +17,9 @@ namespace HexagonSanDiego.Data
         public DbSet<Image> images { get; set; }
         public DbSet<HomePageDataModel> HomePages { get; set; }
         public DbSet<VertualTours> VertualTour { get; set; }    
-        
+        public DbSet<Policy> Policies { get; set; }
+        public DbSet<Term> Terms { get; set; }
+        public DbSet<ContactUs> ContactUss { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
