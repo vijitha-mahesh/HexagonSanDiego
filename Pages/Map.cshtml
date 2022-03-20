@@ -3,6 +3,74 @@
 @section Style{
 }
 @section Scripts{
+<script type="text/javascript">
+        var map;
+
+
+        function initMap(){
+
+            var mapOptions = {
+                  zoom: 8,
+                  center: new google.maps.LatLng(6.58432, 79.9609),
+                  mapTypeId: 'satellite'
+              };
+
+
+            map = new google.maps.Map(document.getElementById('map'),mapOptions);
+
+            $.ajax({
+                 url: "@Url.Page("/Map")?handler=MapMarkers",
+                    method: "GET",
+                    contentType:"application/json; charset=utf-8",
+                    dataType:"JSON",
+                    success: function (response) {
+                     //  alert(response[0].LocationName);
+
+                       var result = response;
+                       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/library_maps.png';
+
+
+                       $.each(response, function( key, value ) {
+                            var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(value.Latitude, value.Longitude),
+                            map: map,
+                            title: value.LocationName,
+                            icon:iconBase
+                           });
+
+                         }
+
+                        );
+
+
+             
+
+
+                    },
+                    failure: function (response) {
+                            alert("failure " + response.responseText);
+                    },
+                    error: function (response) {
+                            alert(" Error "+response.responseText);
+                    }
+            });
+
+        }
+
+            $("#selectMapCategory").change(function () {
+                var c = $("#selectMapCategory").val();
+                alert(c);
+          });
+
+
+
+
+</script>
+
+
+<script async
+        src=@Model.mapsrc>
+</script>
 }
 <div class="container-fluid px-0 page-banner-container">
     <div class="slider-filter-2"></div>
@@ -42,7 +110,7 @@
         <div class="w-100"></div>
         <div class="col-xl-3 col-lg-3 col-md-4 col-12 mt-3 mt-4">
             <div class="input-group">
-                <select id="Select1" class="form-control">
+                <select id="selectMapCategory" class="form-control" asp-for="selectedMapItem">
                     <option>All Categories</option>
                     <option>Entertainment</option>
                     <option>Food</option>
@@ -59,8 +127,13 @@
             109 results found.
         </div>
         <div class="col-12 mt-5 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12045.363266195562!2d29.053964!3d40.995913!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x684675e1d4b47eb2!2sRella%20Medya!5e0!3m2!1str!2str!4v1645776311668!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div id="map" style="height:600px; width: 100%"></div>
+
+
+
         </div>
+
         <div class="col-12 list-link">
             <h2 class="mt-5">Entertainment</h2>
             <ul>
@@ -153,4 +226,7 @@
             <p>Aenean euismod vulputate eros, eu convallis dolor aliquam et. Vivamus malesuada, nulla non ultrices scelerisque, erat sapien bibendum magna, at tincidunt purus dui at urna. Proin ac pellentesque nulla, non volutpat quam. Phasellus ullamcorper ante et metus laoreet commodo.</p>
         </div>
     </div>
+
+
+
 </div>

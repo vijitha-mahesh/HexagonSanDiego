@@ -60,12 +60,16 @@ namespace HexagonSanDiego.Migrations
                     b.ToTable("Users");
                 });
 
+
+
             modelBuilder.Entity("HexagonSanDiego.Models.Amenity", b =>
+
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -218,6 +222,7 @@ namespace HexagonSanDiego.Migrations
             modelBuilder.Entity("HexagonSanDiego.Models.HomePageDataModel", b =>
                 {
                     b.Navigation("Images");
+
                 });
 #pragma warning restore 612, 618
         }
