@@ -191,6 +191,21 @@ namespace HexagonSanDiego.Migrations
                     b.ToTable("images");
                 });
 
+            modelBuilder.Entity("HexagonSanDiego.Models.VertualTours", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("VertualTour");
+                });
+
             modelBuilder.Entity("HexagonSanDiego.Models.Image", b =>
                 {
                     b.HasOne("HexagonSanDiego.Models.HomePageDataModel", "HomePage")
