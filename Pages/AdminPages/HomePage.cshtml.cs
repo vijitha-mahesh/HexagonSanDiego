@@ -53,7 +53,7 @@ namespace HexagonSanDiego.Pages.AdminPages
             //Gallery Image Upload
             var galleryimg = Path.Combine(_iwebhost.WebRootPath, "images/page", galleryImage.FileName);
             var stream3 = new FileStream(galleryimg, FileMode.Create);
-            await galleryImage.CopyToAsync(stream2);
+            await galleryImage.CopyToAsync(stream3);
             var galleryPath = "images/page/" + galleryImage.FileName;
             homePageDataModel.PhotogalleryImage = galleryPath;
 
