@@ -6,7 +6,7 @@ namespace HexagonSanDiego.Repositories.IRepository
 {
     public interface IPolicyRepository
     {
-        Task<bool> AddPolicy(PolicyDto policy);
+        bool AddPolicy(PolicyDto policy);
 
         Task<Policy> GetPolicy();
 

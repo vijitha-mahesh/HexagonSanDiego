@@ -22,13 +22,18 @@ namespace HexagonSanDiego.Repositories.Repository
             _mapper = mapper;
 
         }
-        public async Task<bool> AddPolicy(PolicyDto policy)
+        public bool AddPolicy(PolicyDto policy)
         {
             Policy Policy = _mapper.Map<Policy>(policy);
 
             _context.Policies.Add(Policy);
-            await _context.SaveChangesAsync();
-            return true;
+            if (_context.SaveChanges() >= 0)
+            {
+                return true;
+
+            }
+            return false;
+
         }
 
         public async Task<Policy> GetPolicy()

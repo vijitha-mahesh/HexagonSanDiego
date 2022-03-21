@@ -90,6 +90,8 @@ namespace HexagonSanDiego
             services.AddScoped<IFloorPlanRepository, FloorPlanRepository>();
             services.AddScoped<IHomePageRepository,HomePageRepository>();
             services.AddScoped<IVertualToursRepository, VertualToursRepository>();
+            services.AddScoped<IPolicyRepository, PolicyRepository>();
+            services.AddScoped<ITermsRepository, TermRepository>();
 
 
             //////////////////////////////////////////////////////// Auth 
