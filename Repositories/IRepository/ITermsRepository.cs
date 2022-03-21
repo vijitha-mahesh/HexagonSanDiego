@@ -6,7 +6,7 @@ namespace HexagonSanDiego.Repositories.IRepository
 {
     public interface ITermsRepository
     {
-        Task<bool> AddTerm(TermsDto terms);
+        bool AddTerm(TermsDto terms);
 
         Task<Term> GetTerm();
 
