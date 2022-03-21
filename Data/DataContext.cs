@@ -20,7 +20,7 @@ namespace HexagonSanDiego.Data
         public DbSet<Policy> Policies { get; set; }
         public DbSet<Term> Terms { get; set; }
         public DbSet<ContactUs> ContactUss { get; set; }
-
+        public DbSet<Accessbility> Accessbilities { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
