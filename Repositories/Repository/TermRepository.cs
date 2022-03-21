@@ -22,13 +22,18 @@ namespace HexagonSanDiego.Repositories.Repository
             _mapper = mapper;
 
         }
-        public async Task<bool> AddTerm(TermsDto terms)
+        public bool AddTerm(TermsDto terms)
         {
             Term term = _mapper.Map<Term>(terms);
 
             _context.Terms.Add(term);
-            await _context.SaveChangesAsync();
-            return true;
+            if(_context.SaveChanges() >= 0)
+            {
+                return true;
+
+            }
+            return false;
+
         }
 
         public async Task<Term> GetTerm()
