@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 Migrations/
+Migrations/DataContextModelSnapshot.cs
+Migrations/20220316090009_location.Designer.cs
+Migrations/20220316090009_location.cs
