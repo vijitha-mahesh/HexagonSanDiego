@@ -8,5 +8,6 @@
         public double Longitude { get; set; }
         public string Description { get; set; }
         public string LocationType { get; set; }
+        public string IconUrl { get; set; }
     }
 }

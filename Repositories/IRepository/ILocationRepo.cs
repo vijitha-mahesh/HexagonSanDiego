@@ -8,5 +8,7 @@ namespace HexagonSanDiego.Repositories.IRepository
     {
        Task< IEnumerable<Location>> GetallLocations();
         Location GetFirstLocation();
+
+        bool createLocation(Location location);
     }
 }

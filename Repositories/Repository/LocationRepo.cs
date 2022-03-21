@@ -16,6 +16,17 @@ namespace HexagonSanDiego.Repositories.Repository
         {
             _context = context;
         }
+
+        public bool createLocation(Location location)
+        {
+            _context.Add(location);
+           if(_context.SaveChanges() >= 0)
+            {
+                return true;
+            }
+           return false;
+        }
+
         public async Task<IEnumerable<Location>> GetallLocations()
         {
             return await _context.locations.ToListAsync();
