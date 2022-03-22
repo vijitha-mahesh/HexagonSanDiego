@@ -1,4 +1,5 @@
 ﻿@page
+@using HexagonSanDiego.Dtos.FloorPlanDtos
 @model HexagonSanDiego.Pages.EbrochureModel
 @section Style{
 }
@@ -53,6 +54,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var item in Model.allFloorPlans)
+                     {
                         <tr>
                             <td>
                                 <div class="custom-control custom-checkbox">
@@ -62,99 +65,15 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">Studio - s1</a>
+                                <a href="@item.ImageUrl" data-fancybox="images">@item.Name</a>
                             </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
+                            <td>@item.Bed</td>
+                            <td>@item.Bath</td>
+                            <td>@item.SqFeet</td>
+                            <td>@item.Rent</td>
+                            <td>@item.Deposit</td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" id="checkbox3" />
-                                    <label id="lbl1" class="custom-control-label" for="checkbox3">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">Studio Large - s2</a>
-                            </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" id="checkbox4" />
-                                    <label id="lbl1" class="custom-control-label" for="checkbox4">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">Studio w/Alcove 1 - sa1</a>
-                            </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" id="checkbox5" />
-                                    <label id="lbl1" class="custom-control-label" for="checkbox5">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">Studio w/Alcove 2 - sa2</a>
-                            </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" id="checkbox6" />
-                                    <label id="lbl1" class="custom-control-label" for="checkbox6">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">Studio w/Alcove 3 - sa3</a>
-                            </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" id="checkbox7" />
-                                    <label id="lbl1" class="custom-control-label" for="checkbox7">
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/images/gallery/floor-1.jpg" data-fancybox="images">One Bedroom - a1</a>
-                            </td>
-                            <td>Studio</td>
-                            <td>1</td>
-                            <td>390</td>
-                            <td>Call for details</td>
-                            <td>$500</td>
-                        </tr>
+                        }
                     </tbody>
                 </table>
             </div>
