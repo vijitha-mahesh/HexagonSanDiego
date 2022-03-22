@@ -92,6 +92,7 @@ namespace HexagonSanDiego
             services.AddScoped<IVertualToursRepository, VertualToursRepository>();
             services.AddScoped<IPolicyRepository, PolicyRepository>();
             services.AddScoped<ITermsRepository, TermRepository>();
+            services.AddScoped<IAccessbilityRepository, AccessbilityRepository>();
 
 
             //////////////////////////////////////////////////////// Auth 
