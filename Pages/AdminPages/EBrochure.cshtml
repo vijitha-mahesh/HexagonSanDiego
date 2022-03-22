@@ -4,4 +4,113 @@
   Layout = null;
 }
 
+
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
 <h1> E broucher </h1>
+<div class='create-floor-plan w-50 container' id="addFloorPlan">
+    <div class="form-title p-4">
+        <h4 class="text-center my-0 ">New Floor Plan</h4>
+    </div>
+
+    <form method="post">
+
+        <div class="form-group row d-flex justify-content-center">
+
+            <label class="col-sm-2 col-form-label ">
+                Category
+            </label>
+            <div class="col-sm-6">
+                <select class="form-select form-control form-control-sm" aria-label="Default select example" >
+                    <option value="Studio"> Studio</option>
+                    <option value="1 Bed"> 1 Bed</option>
+                    <option value="2 Bed"> 2 Bed </option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Name
+            </label>
+            <div class="col-sm-6">
+                <input  type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Bed
+            </label>
+            <div class="col-sm-6">
+                <input type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Bath
+            </label>
+            <div class="col-sm-6">
+                <input type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Sq. Ft.
+            </label>
+            <div class="col-sm-6">
+                <input  type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Rent
+            </label>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <input type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Deposit
+            </label>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <input type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Video Url
+            </label>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <input  type="text" id="form6Example1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+
+            <label class="col-sm-2 col-form-label ">
+                Category
+            </label>
+            <div class="col-sm-6">
+                <select class="form-select form-control form-control-sm" aria-label="Default select example" >
+                    <option value="Available"> Available</option>
+                    <option value="ContactForAvailability"> Contact For Availability</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="justify-content-center w-50 container">
+            <button type="submit" class="btn btn-primary btn-block d-flex justify-content-center">Create Floor Plan</button>
+        </div>
+
+    </form>
+
+</div>
