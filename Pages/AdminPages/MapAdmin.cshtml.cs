@@ -15,7 +15,7 @@ namespace HexagonSanDiego.Pages.AdminPages
 
         }
 
-       [BindProperty]
+        [BindProperty]
         public Location location { get; set; }
         public void OnGet()
         {
@@ -29,7 +29,7 @@ namespace HexagonSanDiego.Pages.AdminPages
             {
                 switch (locationresult.LocationType)
                 {
-                    case "Entertainment": 
+                    case "Entertainment":
                         locationresult.IconUrl = "https://maps.google.com/mapfiles/kml/shapes/library_maps.png";
                         break;
 
@@ -37,11 +37,11 @@ namespace HexagonSanDiego.Pages.AdminPages
                         locationresult.IconUrl = "https://maps.google.com/mapfiles/kml/shapes/library_maps.png";
                         break;
 
-                    case "ShopAndService":
+                    case "Shops And Service":
                         locationresult.IconUrl = "https://maps.google.com/mapfiles/kml/shapes/library_maps.png";
                         break;
 
-                    case "NightLife":
+                    case "Night Life":
                         locationresult.IconUrl = "https://maps.google.com/mapfiles/kml/shapes/library_maps.png";
                         break;
 
@@ -62,7 +62,7 @@ namespace HexagonSanDiego.Pages.AdminPages
                 }
 
 
-               if (_repo.createLocation(locationresult))
+                if (_repo.createLocation(locationresult))
                 {
                     return Redirect("/Map");
                 }

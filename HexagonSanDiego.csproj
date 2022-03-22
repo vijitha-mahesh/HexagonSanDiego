@@ -88,4 +88,8 @@
     
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\map\" />
+  </ItemGroup>
+
 </Project>
