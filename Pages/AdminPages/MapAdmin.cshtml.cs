@@ -64,7 +64,7 @@ namespace HexagonSanDiego.Pages.AdminPages
 
                if (_repo.createLocation(locationresult))
                 {
-                    return Redirect("/MapAdmin");
+                    return Redirect("/Map");
                 }
             }
 
