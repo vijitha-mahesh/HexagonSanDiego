@@ -6,6 +6,7 @@ namespace HexagonSanDiego.Models
     {
         public int Id { get; set; }
         public string SliderText { get; set; }
+        public string SliderSubText { get; set; }
         public string SliderImage { get; set; }
         public string WelcometoText { get; set; }
         public string WelcometoImage { get; set; }
