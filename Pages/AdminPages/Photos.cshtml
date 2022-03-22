@@ -24,7 +24,15 @@
             <div class="btn-group-vertical">
                 <form method="post" enctype="multipart/form-data">
                     <input name="ifile" class="form-control mb-4" type="file" accept="image/*" asp-for="ifile" />
-                    <input type="submit" class="mb-4  btn" value="Add Image" />
+                       
+              <div class="form-group row d-flex justify-content-center">
+             <div class="justify-content-center w-50 container">
+            <button type="submit" class="btn btn-primary btn-block d-flex justify-content-center">Submit</button>
+        </div>
+            <div class="justify-content-center w-50 container">
+            <button type="button" class="btn btn-secondary btn-block d-flex justify-content-center" onclick="history.back()">Cancel</button>
+        </div>
+        </div>
                     <h4> @ViewData["Message"] </h4>
                 </form>
             </div>
