@@ -1,4 +1,5 @@
 ﻿@page
+@using HexagonSanDiego.Models
 @model HexagonSanDiego.Pages.AdminPages.MapAdmin
 @{
     Layout = null;
@@ -12,7 +13,6 @@
 </head>
 
 
-
     <div class="form-title p-4">
         <h4 class="text-center my-0 ">Create Location</h4>
     </div>
@@ -24,7 +24,7 @@
                Location Name
             </label>
             <div class="col-sm-6">
-                <input asp-for="@Model.location.LocationName" type="text" id="locname" class="form-control" />
+                <input asp-for="location.LocationName" type="text" id="locname" class="form-control" />
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 Latitude
             </label>
             <div class="col-sm-6">
-                <input asp-for="@Model.location.Latitude" type="text" id="loclatitude" class="form-control" />
+                <input asp-for="location.Latitude" type="text" id="loclatitude" class="form-control" />
             </div>
         </div>
 
@@ -42,7 +42,7 @@
                 Longitude
             </label>
             <div class="col-sm-6">
-                <input asp-for="@Model.location.Longitude" type="text" id="loclongitude" class="form-control" />
+                <input asp-for="location.Latitude" type="text" id="loclongitude" class="form-control" />
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                Description
             </label>
             <div class="col-sm-6">
-                <input asp-for="@Model.location.Description" type="text" id="locdiscription" class="form-control" />
+                <input asp-for="location.Description" type="text" id="locdiscription" class="form-control" />
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                 Location Type 
             </label>
             <div class="col-sm-6">
-                <select class="form-select form-control form-control-sm" aria-label="Default select example" asp-for="@Model.location.LocationType">
+                <select class="form-select form-control form-control-sm" aria-label="Default select example" asp-for="location.LocationType">
                     <option value="Entertainment"> Entertainment</option>
                     <option value="Food"> Food</option>
                     <option value="ShopAndService"> Shop And Service</option>
