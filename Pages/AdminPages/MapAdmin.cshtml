@@ -1,0 +1,83 @@
+﻿@page
+@model HexagonSanDiego.Pages.AdminPages.MapAdmin
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+
+    <div class="form-title p-4">
+        <h4 class="text-center my-0 ">Create Location</h4>
+    </div>
+
+    <form method="post">
+
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+               Location Name
+            </label>
+            <div class="col-sm-6">
+                <input asp-for="@Model.location.LocationName" type="text" id="locname" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Latitude
+            </label>
+            <div class="col-sm-6">
+                <input asp-for="@Model.location.Latitude" type="text" id="loclatitude" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+                Longitude
+            </label>
+            <div class="col-sm-6">
+                <input asp-for="@Model.location.Longitude" type="text" id="loclongitude" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row d-flex justify-content-center">
+            <label class="col-sm-2 col-form-label">
+               Description
+            </label>
+            <div class="col-sm-6">
+                <input asp-for="@Model.location.Description" type="text" id="locdiscription" class="form-control" />
+            </div>
+        </div>
+
+       
+        <div class="form-group row d-flex justify-content-center">
+
+            <label class="col-sm-2 col-form-label ">
+                Location Type 
+            </label>
+            <div class="col-sm-6">
+                <select class="form-select form-control form-control-sm" aria-label="Default select example" asp-for="@Model.location.LocationType">
+                    <option value="Entertainment"> Entertainment</option>
+                    <option value="Food"> Food</option>
+                    <option value="ShopAndService"> Shop And Service</option>
+                    <option value="NightLife"> Night Life</option>
+                    <option value="Recreation"> Recreation</option>
+                    <option value="Professional"> Professional</option>
+                    <option value="Traval"> Traval</option>
+                   
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="justify-content-center w-50 container">
+            <button type="submit" class="btn btn-primary btn-block d-flex justify-content-center">Create New Location</button>
+        </div>
+
+    </form>
