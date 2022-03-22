@@ -26,58 +26,61 @@
     <form method="post"  enctype="multipart/form-data">
         <div class="form-group">
             <label for="formGroupExampleInput">Slider Images</label>
-            <input name="sliderImage" class="form-control " type="file" accept="image/*" asp-for="sliderImage"/>
+            <input name="sliderImage" class="form-control " type="file" accept="image/*" asp-for="sliderImage" value="@Model.homePageDataModel?.SliderImage" />
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Slider Text</label>
-            <input asp-for="homePageDataModel.SliderText" type="text" class="form-control">
+            <input asp-for="homePageDataModel.SliderText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.SliderText">
+        </div> <div class="form-group">
+            <label for="formGroupExampleInput2">Slider Sub Text</label>
+            <input asp-for="homePageDataModel.SliderSubText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.SliderSubText"> 
         </div>
-@*        <div class="form-group">
+@*<div class="form-group">
             <label for="formGroupExampleInput2">Welcome to Text</label>
             <input asp-for="homePageDataModel.WelcometoText" type="text" class="form-control">
         </div>*@
 
         <div class="form-group">
              <label for="formGroupExampleInput2">Welcome to Text</label>
-            <textarea asp-for="homePageDataModel.WelcometoText" id="WelcometoText" class="ckeditor" name="WelcometoText" rows="200"></textarea>
+            <textarea asp-for="homePageDataModel.WelcometoText" id="WelcometoText" class="ckeditor" name="WelcometoText" rows="200" placeholder="@Model.homePageDataModel?.WelcometoText"></textarea>
         </div>
 
         <div class="form-group">
             <label for="formGroupExampleInput2">Welcome to Image</label>
-            <input name="welcomeImage" class="form-control " type="file" accept="image/*" asp-for="welcomeImage"/>
+            <input name="welcomeImage" class="form-control " type="file" accept="image/*" asp-for="welcomeImage"  value="@Model.homePageDataModel?.WelcometoImage"/>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Photogallery Text</label>
-            <input asp-for="homePageDataModel.PhotogalleryText" type="text" class="form-control">
+            <input asp-for="homePageDataModel.PhotogalleryText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.PhotogalleryText">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Photogallery Image</label>
-            <input name="galleryImage" class="form-control " type="file" accept="image/*" asp-for="galleryImage"/>
+            <input name="galleryImage" class="form-control " type="file" accept="image/*" asp-for="galleryImage" value="@Model.homePageDataModel?.PhotogalleryImage"/>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Amenities Text</label>
-            <input asp-for="homePageDataModel.AmenitiesText" type="text" class="form-control">
+            <input asp-for="homePageDataModel.AmenitiesText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.AmenitiesText">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Community Text</label>
-            <input asp-for="homePageDataModel.CommunityText" type="text" class="form-control">
+            <input asp-for="homePageDataModel.CommunityText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.CommunityText">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Footer Texts</label>
-            <input asp-for="homePageDataModel.FooterText" type="text" class="form-control">
+            <input asp-for="homePageDataModel.FooterText" type="text" class="form-control" placeholder="@Model.homePageDataModel?.FooterText">
         </div>
         <h1>Social Links</h1>
         <div class="form-group">
             <label for="formGroupExampleInput2">Facebook</label>
-            <input asp-for="homePageDataModel.FacebookLink" type="text" class="form-control">
+            <input asp-for="homePageDataModel.FacebookLink" type="text" class="form-control" placeholder="@Model.homePageDataModel?.FacebookLink">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Instagram</label>
-            <input asp-for="homePageDataModel.InstergramLink" type="text" class="form-control">
+            <input asp-for="homePageDataModel.InstergramLink" type="text" class="form-control" placeholder="@Model.homePageDataModel?.InstergramLink">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Yelp</label>
-            <input asp-for="homePageDataModel.YellpLink" type="text" class="form-control">
+            <input asp-for="homePageDataModel.YellpLink" type="text" class="form-control" placeholder="@Model.homePageDataModel?.YellpLink">
         </div>
 
         <!-- Submit button -->
